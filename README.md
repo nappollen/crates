@@ -1,5 +1,10 @@
 # A Game About Crates — Save Tool
 
+[![CI](https://github.com/nappollen/crates/actions/workflows/ci.yml/badge.svg)](https://github.com/nappollen/crates/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/nappollen/crates/actions/workflows/pages.yml/badge.svg)](https://github.com/nappollen/crates/actions/workflows/pages.yml)
+[![VRChat World](https://img.shields.io/badge/VRChat-A%20Game%20About%20Crates-1f8b4c?logo=vrchat&logoColor=white)](https://vrchat.com/home/world/wrld_9907d48d-47e6-4139-b859-297396ed0f13)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Backup and restore your save file for [**A Game About Crates**](https://vrchat.com/home/world/wrld_9907d48d-47e6-4139-b859-297396ed0f13) by [_Froggi](https://vrchat.com/home/user/usr_1f6a7514-3435-479d-b956-2efb6f1c2274) on VRChat.
 
 The game uses a proprietary **ENC1** encryption format for save data (reverse-engineered from the Udon assembly). This repo provides:
@@ -8,13 +13,11 @@ The game uses a proprietary **ENC1** encryption format for save data (reverse-en
 - **Python CLI** tools (`decrypt.py` / `crypt.py`)
 - **Node.js CLI** tools (`decrypt.js` / `crypt.js`)
 
-> See also [**nappollen/crates**](https://github.com/nappollen/crates) for related work.
-
 ---
 
 ## Web UI
 
-👉 **[Open the Save Tool](https://Nappollen.github.io/crate/)**
+👉 **[Open the Save Tool](https://Nappollen.github.io/crates/)**
 
 Decrypt and re-encrypt saves entirely in your browser — nothing is uploaded anywhere.
 
@@ -93,7 +96,6 @@ ENC1: <hexCipher> <checksum4hex>
 
 | Tool | Requirement |
 |---|---|
-| Python CLI | Python 3.8+ |
 | Node.js CLI | Node.js 11+ |
 | Browser tool | Any modern browser |
 
