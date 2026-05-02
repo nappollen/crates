@@ -10,7 +10,6 @@ Backup and restore your save file for [**A Game About Crates**](https://vrchat.c
 The game uses a proprietary **ENC1** encryption format for save data (reverse-engineered from the Udon assembly). This repo provides:
 
 - A **browser-based tool** (GitHub Pages) — no install needed
-- **Python CLI** tools (`decrypt.py` / `crypt.py`)
 - **Node.js CLI** tools (`decrypt.js` / `crypt.js`)
 
 ---
