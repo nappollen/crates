@@ -1,4 +1,4 @@
-# A Game About Crates — Save Tool
+# 📦 A Game About Crates — Save Tool
 
 [![CI](https://github.com/nappollen/crates/actions/workflows/ci.yml/badge.svg)](https://github.com/nappollen/crates/actions/workflows/ci.yml)
 [![Deploy to GitHub Pages](https://github.com/nappollen/crates/actions/workflows/pages.yml/badge.svg)](https://github.com/nappollen/crates/actions/workflows/pages.yml)
@@ -17,7 +17,7 @@ The game uses a proprietary **ENC1** encryption format for save data (reverse-en
 
 ## Web UI
 
-👉 **[Open the Save Tool](https://Nappollen.github.io/crates/)**
+👉 **[Open the Save Tool](https://nappollen.github.io/crates/)**
 
 Decrypt and re-encrypt saves entirely in your browser — nothing is uploaded anywhere.
 
@@ -30,37 +30,25 @@ All four CLI tools share the same interface and produce identical output. Use wh
 ### Decrypt
 
 ```bash
-# Python
-python decrypt.py <save.txt> <PlayerName> [--key KEY] [--output FILE]
-
-# Node.js
 node decrypt.js <save.txt> <PlayerName> [--key KEY] [--output FILE]
 ```
 
 **Example:**
 ```bash
-python decrypt.py save.txt Nappollen
+node decrypt.js save.txt Nappollen
 # → save_decoded.json
-
-node decrypt.js save.txt Nappollen --output out.json
 ```
 
 ### Encrypt (re-pack)
 
 ```bash
-# Python
-python crypt.py <decoded.json> <PlayerName> [--key KEY] [--output FILE]
-
-# Node.js
 node crypt.js <decoded.json> <PlayerName> [--key KEY] [--output FILE]
 ```
 
 **Example:**
 ```bash
-python crypt.py save_decoded.json Nappollen
+node crypt.js save_decoded.json Nappollen
 # → save_decoded_coded.txt
-
-node crypt.js save_decoded.json Nappollen --output save_new.txt
 ```
 
 ### Arguments
@@ -103,4 +91,4 @@ ENC1: <hexCipher> <checksum4hex>
 
 ## License
 
-[MIT](LICENSE) © 2026 Nappollen
+[MIT](LICENSE) © 2026 [Nappollen](https://nappollen.github.io/)
