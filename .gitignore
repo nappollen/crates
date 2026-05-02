@@ -1,0 +1,36 @@
+# ── Generated save outputs ──────────────────────────────────────
+*_decoded.json
+*_decoded.txt
+*_coded.txt
+
+# ── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# ── Node.js ─────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log
+.pnp.*
+
+# ── OS ──────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editors ─────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.swp
+*~

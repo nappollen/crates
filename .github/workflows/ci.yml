@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Decrypt known vector
+        run: |
+          echo -n 'ENC1:1b9c502fce226f535d03b610bc04f6' > /tmp/test.save
+          node decrypt.js /tmp/test.save Nappollen --output /tmp/decoded.json
+          # verify output contains expected JSON
+          node -e "
+            const fs = require('fs');
+            const obj = JSON.parse(fs.readFileSync('/tmp/decoded.json','utf8'));
+            if (obj.test !== true) throw new Error('Unexpected value: ' + JSON.stringify(obj));
+            console.log('Decrypt OK:', JSON.stringify(obj));
+          "
+
+      - name: Encrypt and verify round-trip
+        run: |
+          node crypt.js /tmp/decoded.json Nappollen --output /tmp/recoded.txt
+          node decrypt.js /tmp/recoded.txt Nappollen --output /tmp/decoded2.json
+          node -e "
+            const fs = require('fs');
+            const a = JSON.stringify(JSON.parse(fs.readFileSync('/tmp/decoded.json','utf8')));
+            const b = JSON.stringify(JSON.parse(fs.readFileSync('/tmp/decoded2.json','utf8')));
+            if (a !== b) throw new Error('Round-trip mismatch');
+            console.log('Round-trip OK');
+          "
+
